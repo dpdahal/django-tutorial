@@ -1,0 +1,14 @@
+{% extends 'master.html' %}
+
+{% block content %}
+
+    <h1>Welcome to Django class</h1>
+
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name |upper }}</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

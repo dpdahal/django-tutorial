@@ -4,16 +4,21 @@ from django.shortcuts import render, HttpResponse
 # Create your views here.
 
 def index(request):
-    print(dir(HttpResponse))
-    return HttpResponse("<h1>Welcome blog section</h1>")
+    content = {
+        'users': [
+            {'name': 'admin', 'address': 'ktm'},
+            {'name': 'sita', 'address': 'ltp'},
+        ]
+    }
+    return render(request, 'index.html', content)
 
 
 def about(request):
-    return HttpResponse("About page")
+    return render(request, 'about.html')
 
 
 def contact(request):
-    return HttpResponse("Contact page")
+    return render(request, 'contact.html')
 
 
 def news(request, id):
